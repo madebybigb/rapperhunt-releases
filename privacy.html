@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RapperHunt Privacy Policy</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1.25rem 3rem; line-height: 1.55; color: #1a1a1a; }
+    h1 { font-size: 1.75rem; } h2 { font-size: 1.2rem; margin-top: 1.75rem; }
+    table { border-collapse: collapse; width: 100%; margin: 0.75rem 0 1.25rem; font-size: 0.95rem; }
+    th, td { border: 1px solid #ccc; padding: 0.45rem 0.55rem; text-align: left; vertical-align: top; }
+    code { font-size: 0.88em; background: #f4f4f4; padding: 0.1em 0.3em; border-radius: 4px; }
+    a { color: #0b57d0; }
+  </style>
+</head>
+<body>
+<h1>RapperHunt privacy policy</h1>
+<p><strong>Last updated:</strong> August 15, 2026  </p>
+<p><strong>Contact:</strong> madebybigb@gmail.com</p>
+<p>RapperHunt is a Chrome extension for beatmakers. It finds similar Spotify artists in a listener range, saves prospects, and helps you copy DMs. This policy describes what the extension stores and what it sends over the network.</p>
+<h2>Summary</h2>
+<p>- We do <strong>not</strong> sell your personal data.</p>
+<p>- Hunt and unlock features need a small amount of data on our Cloudflare Worker.</p>
+<p>- Purchases and license keys are handled by <strong>Gumroad</strong>; card details never pass through the extension.</p>
+<p>- The overlay runs on <strong>Spotify</strong> pages only.</p>
+<h2>Data stored on your device</h2>
+<p>RapperHunt uses Chrome storage and a local IndexedDB cache on your computer:</p>
+<table>
+<tr><th>Data</th><th>Why</th></tr>
+<tr><td>Settings (producer name, genre, DM templates, companion URL)</td><td>Your setup</td></tr>
+<tr><td>Prospects list (artist names, links, notes, follow-up dates)</td><td>CRM on-device</td></tr>
+<tr><td>Device id</td><td>Quota and license seats</td></tr>
+<tr><td>Install token (after unlock)</td><td>Bind paid access to this Chrome install</td></tr>
+<tr><td>Search presets, panel UI state, skip keys</td><td>Convenience</td></tr>
+<tr><td>Discovery cache (artists / recommendations)</td><td>Faster hunts offline-ish</td></tr>
+</table>
+<p>You can clear this by removing the extension or clearing site data for the extension in Chrome.</p>
+<h2>Data sent to RapperHunt servers</h2>
+<p>Default API: <code>https://rapperhunt-api.bmbergman03.workers.dev</code> (Cloudflare Worker + KV).</p>
+<p>Typical requests include:</p>
+<p>- Device id and install token (headers) for quota and paid seats</p>
+<p>- License key once when you unlock (redeem)</p>
+<p>- Hunt: seed artist / name, listener min/max, exclude ids</p>
+<p>- Enrich: artist name / Spotify id for socials and previews</p>
+<p>- Feedback: save / skip / not-similar signals (seed + artist ids/names)</p>
+<p>We use this to enforce trial and paid hunt limits, seats (up to 2 installs), and to improve matching quality. We do not use it for advertising networks.</p>
+<h2>Third parties the extension contacts</h2>
+<table>
+<tr><th>Party</th><th>Purpose</th></tr>
+<tr><td><strong>Spotify</strong> (open.spotify.com, api-partner.spotify.com)</td><td>Monthly listener counts and related lookups for cards</td></tr>
+<tr><td><strong>MusicBrainz</strong></td><td>Resolve some Spotify artist ids / names</td></tr>
+<tr><td><strong>imginn.com</strong></td><td>Approximate Instagram follower counts when shown</td></tr>
+<tr><td><strong>Last.fm / Deezer</strong> (via our Worker)</td><td>Similar-artist <strong>names</strong> only; card monthlies stay Spotify</td></tr>
+<tr><td><strong>Gumroad</strong></td><td>Buy Pro / Lifetime; license receipt email</td></tr>
+</table>
+<p>Opening Gumroad or social links uses your browser; we do not receive your Gumroad password or card number.</p>
+<h2>Host page (Spotify)</h2>
+<p>On Spotify artist pages, the overlay may read the page URL locally so Finder can seed that artist. That URL is used in the extension UI; it is not sold.</p>
+<h2>Cross-promotion</h2>
+<p>While a hunt loads, RapperHunt may show <strong>Sponsored</strong> links to other madebybigb products (AudioMark, VideoMark, MarkBundle) on Gumroad. Those are optional; they do not change hunt results.</p>
+<h2>Purchases</h2>
+<p>Pro and Lifetime are sold on Gumroad. Paste the license key in Settings &#226;†’ Unlock. See also our support notes for refunds and seats.</p>
+<h2>Retention</h2>
+<p>Device and license seat records live in our Worker KV while needed for billing and abuse prevention. Local data stays until you clear it or uninstall.</p>
+<h2>Your choices</h2>
+<p>- Use the free trial without purchasing.</p>
+<p>- Do not paste a license key if you do not want paid unlock.</p>
+<p>- Uninstall the extension to stop collection from this browser.</p>
+<p>- Email madebybigb@gmail.com for privacy questions or deletion requests related to Worker-stored device/license records (include enough detail to find the record; we cannot recover keys from chat alone).</p>
+<h2>Changes</h2>
+<p>We may update this policy. The &#226;€œLast updated&#226;€ date at the top will change. Continued use after an update means you accept the revised policy.</p>
+
+</body>
+</html>
