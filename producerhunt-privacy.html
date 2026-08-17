@@ -36,7 +36,7 @@
   <body>
     <main>
       <h1>ProducerHunt privacy policy</h1>
-      <p><strong>Last updated:</strong> August 16, 2026<br />
+      <p><strong>Last updated:</strong> August 17, 2026<br />
       <strong>Contact:</strong> <a href="mailto:madebybigb@gmail.com">madebybigb@gmail.com</a></p>
       <p>
         ProducerHunt is a Chrome extension that helps beatmakers find producer
@@ -49,7 +49,7 @@
         <li>We do <strong>not</strong> sell your personal data.</li>
         <li>Hunt results, notes, and settings stay on your device by default.</li>
         <li>The overlay and hunt run on <strong>Instagram</strong> pages only, while you are logged in.</li>
-        <li>No hunt data is sent to ProducerHunt servers.</li>
+        <li>No hunt data is sent to ProducerHunt servers. License redeem sends the key to our Worker so we can bind up to 2 installs.</li>
       </ul>
 
       <h2>Data stored on your device</h2>
@@ -61,7 +61,9 @@
         <tbody>
           <tr><td>Settings (seeds, keywords, producer name, genre, DM templates)</td><td>Your setup</td></tr>
           <tr><td>Prospects (names, Instagram handles, photos as data URLs, notes, follow-up dates, status)</td><td>On-device CRM</td></tr>
-          <tr><td>Skipped profile ids</td><td>Avoid showing the same skip again</td></tr>
+          <tr><td>Skipped profile ids + exclude tokens</td><td>Avoid showing the same skip / similar false positives</td></tr>
+          <tr><td>Hunt cursor</td><td>Resume Next batch after reload</td></tr>
+          <tr><td>Device id + install token + last known plan</td><td>License seats (2 installs per key)</td></tr>
           <tr><td>Privacy consent flag</td><td>Remember that you agreed to this notice</td></tr>
           <tr><td>Panel UI state</td><td>Convenience</td></tr>
         </tbody>
@@ -83,14 +85,23 @@
 
       <h2>Data sent over the network</h2>
       <p>
-        By default, nothing is sent to ProducerHunt-operated servers. An optional
-        companion URL (localhost only) can load default seed/keyword lists
-        (<code>/health</code>, <code>/config</code>). That config does not include your
-        prospects or hunt results.
+        Hunt results stay on this device. They are not uploaded.
       </p>
       <p>
-        Opening an Instagram profile, a sponsored product link, or the privacy policy
-        uses your browser like any other link.
+        Unlock uses our Cloudflare Worker
+        (<code>producerhunt-api.bmbergman03.workers.dev</code>).
+        When you paste a license key, the extension sends that key, a random device id,
+        and an install token so we can verify the purchase with Gumroad and bind
+        up to 2 Chrome installs. We do not receive your Instagram session or prospect list.
+      </p>
+      <p>
+        Optional <code>/health</code> and <code>/config</code> calls load default
+        seed/keyword lists. That config does not include your prospects or hunt results.
+      </p>
+      <p>
+        Opening an Instagram profile, Gumroad checkout, a sponsored product link,
+        or the privacy policy uses your browser like any other link. Card details
+        stay on Gumroad.
       </p>
 
       <h2>Sponsored links</h2>
@@ -106,6 +117,7 @@
 
       <h2>Your choices</h2>
       <ul>
+        <li>Do not paste a license key if you do not want paid unlock.</li>
         <li>Do not start a hunt if you do not want follower lists read in this browser.</li>
         <li>Turn off sponsored cards in Settings.</li>
         <li>Uninstall to stop the overlay on Instagram.</li>
